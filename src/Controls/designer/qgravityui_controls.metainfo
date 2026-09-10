@@ -1,0 +1,777 @@
+// Qt Design Studio component library metadata.
+//
+// The Studio builds its component palette from the *.metainfo files it finds
+// in a module's own directory -- which is why CMake copies this one next to
+// the generated qmldir. Without it every QGravityUI control can still be
+// typed by hand but none of them appear in the library, which is the
+// difference between a library and a directory of files.
+//
+// Two deliberate omissions: no `icon`/`libraryIcon`, so the Studio draws its
+// own placeholder instead of a wrong picture, and property defaults only
+// where a bare instance would otherwise put an invisible item on the canvas
+// (a Button with no text is a 0x28 box). Every property named here is
+// declared on the component or inherited from its base type.
+
+MetaInfo {
+    // --- Primitives --------------------------------------------
+    Type {
+        name: "QGravityUI.Controls.GText"
+        ItemLibraryEntry {
+            name: "Text"
+            category: "QGravityUI - Primitives"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("Text in one of the Gravity typography variants.")
+            Property { name: "text"; type: "string"; value: "Text" }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GIcon"
+        ItemLibraryEntry {
+            name: "Icon"
+            category: "QGravityUI - Primitives"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("An icon from the bundled Gravity icon set, recoloured to the current theme.")
+            Property { name: "name"; type: "string"; value: "circle-check" }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GLink"
+        ItemLibraryEntry {
+            name: "Link"
+            category: "QGravityUI - Primitives"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("Text styled as a link.")
+            Property { name: "text"; type: "string"; value: "Link" }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GDivider"
+        ItemLibraryEntry {
+            name: "Divider"
+            category: "QGravityUI - Primitives"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A one-pixel rule between blocks of content.")
+            Property { name: "width"; type: "int"; value: 120 }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GFlex"
+        ItemLibraryEntry {
+            name: "Flex"
+            category: "QGravityUI - Primitives"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A row or column with gaps from the spacing scale.")
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GLabel"
+        ItemLibraryEntry {
+            name: "Label"
+            category: "QGravityUI - Primitives"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A compact tag, optionally interactive or closable.")
+            Property { name: "content"; type: "string"; value: "Label" }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GCard"
+        ItemLibraryEntry {
+            name: "Card"
+            category: "QGravityUI - Primitives"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A surface with a border, radius and optional padding.")
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GSurface"
+        ItemLibraryEntry {
+            name: "Surface"
+            category: "QGravityUI - Primitives"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("The raw themed background layer a card is built from.")
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GSkeleton"
+        ItemLibraryEntry {
+            name: "Skeleton"
+            category: "QGravityUI - Primitives"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A shimmering placeholder shown while content loads.")
+            Property { name: "width"; type: "int"; value: 120 }
+            Property { name: "height"; type: "int"; value: 16 }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GSpin"
+        ItemLibraryEntry {
+            name: "Spin"
+            category: "QGravityUI - Primitives"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("An indeterminate circular activity indicator.")
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GLoader"
+        ItemLibraryEntry {
+            name: "Loader bar"
+            category: "QGravityUI - Primitives"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("An indeterminate bar shown while content loads.")
+        }
+    }
+
+    // --- Forms -------------------------------------------------
+    Type {
+        name: "QGravityUI.Controls.GButton"
+        ItemLibraryEntry {
+            name: "Button"
+            category: "QGravityUI - Forms"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A button in any of the Gravity views and sizes.")
+            Property { name: "text"; type: "string"; value: "Button" }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GTextField"
+        ItemLibraryEntry {
+            name: "Text field"
+            category: "QGravityUI - Forms"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A single-line text input.")
+            Property { name: "placeholderText"; type: "string"; value: "Placeholder" }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GTextArea"
+        ItemLibraryEntry {
+            name: "Text area"
+            category: "QGravityUI - Forms"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A multi-line text input.")
+            Property { name: "placeholderText"; type: "string"; value: "Placeholder" }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GNumberInput"
+        ItemLibraryEntry {
+            name: "Number input"
+            category: "QGravityUI - Forms"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A numeric input with stepper buttons.")
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GPinInput"
+        ItemLibraryEntry {
+            name: "Pin input"
+            category: "QGravityUI - Forms"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A row of single-character boxes for a code.")
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GCheckbox"
+        ItemLibraryEntry {
+            name: "Checkbox"
+            category: "QGravityUI - Forms"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A checkbox with an optional indeterminate state.")
+            Property { name: "text"; type: "string"; value: "Checkbox" }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GSwitch"
+        ItemLibraryEntry {
+            name: "Switch"
+            category: "QGravityUI - Forms"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("An on/off switch.")
+            Property { name: "text"; type: "string"; value: "Switch" }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GRadio"
+        ItemLibraryEntry {
+            name: "Radio"
+            category: "QGravityUI - Forms"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("One option of a radio group.")
+            Property { name: "text"; type: "string"; value: "Radio" }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GRadioGroup"
+        ItemLibraryEntry {
+            name: "Radio group"
+            category: "QGravityUI - Forms"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A set of mutually exclusive radio options.")
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GSegmentedRadioGroup"
+        ItemLibraryEntry {
+            name: "Segmented radio group"
+            category: "QGravityUI - Forms"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("Radio options drawn as one segmented control.")
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GSlider"
+        ItemLibraryEntry {
+            name: "Slider"
+            category: "QGravityUI - Forms"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A slider, optionally with two handles and tick marks.")
+            Property { name: "width"; type: "int"; value: 200 }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GSelect"
+        ItemLibraryEntry {
+            name: "Select"
+            category: "QGravityUI - Forms"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A dropdown that picks one or several options.")
+            Property { name: "placeholder"; type: "string"; value: "Select" }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GControlLabel"
+        ItemLibraryEntry {
+            name: "Control label"
+            category: "QGravityUI - Forms"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A label bound to a control, clickable to focus it.")
+            Property { name: "text"; type: "string"; value: "Label" }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GClipboardButton"
+        ItemLibraryEntry {
+            name: "Clipboard button"
+            category: "QGravityUI - Forms"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A button that copies its content and shows a confirmation.")
+            Property { name: "content"; type: "string"; value: "copied text" }
+        }
+    }
+
+    // --- Overlays ----------------------------------------------
+    Type {
+        name: "QGravityUI.Controls.GPopup"
+        ItemLibraryEntry {
+            name: "Popup"
+            category: "QGravityUI - Overlays"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("The positioning primitive the other overlays are built on.")
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GPopover"
+        ItemLibraryEntry {
+            name: "Popover"
+            category: "QGravityUI - Overlays"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A titled bubble anchored to an element.")
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GTooltip"
+        ItemLibraryEntry {
+            name: "Tooltip"
+            category: "QGravityUI - Overlays"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A short hint shown on hover after a delay.")
+            Property { name: "text"; type: "string"; value: "Tooltip" }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GActionTooltip"
+        ItemLibraryEntry {
+            name: "Action tooltip"
+            category: "QGravityUI - Overlays"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A tooltip with a title and a hotkey.")
+            Property { name: "title"; type: "string"; value: "Action" }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GMenu"
+        ItemLibraryEntry {
+            name: "Menu"
+            category: "QGravityUI - Overlays"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A list of menu items.")
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GMenuItem"
+        ItemLibraryEntry {
+            name: "Menu item"
+            category: "QGravityUI - Overlays"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("One row of a menu.")
+            Property { name: "text"; type: "string"; value: "Item" }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GDropdownMenu"
+        ItemLibraryEntry {
+            name: "Dropdown menu"
+            category: "QGravityUI - Overlays"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A switcher button with a menu attached.")
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GModal"
+        ItemLibraryEntry {
+            name: "Modal"
+            category: "QGravityUI - Overlays"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A dimmed, focus-trapping overlay.")
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GDialog"
+        ItemLibraryEntry {
+            name: "Dialog"
+            category: "QGravityUI - Overlays"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A modal with a title, body and footer actions.")
+            Property { name: "title"; type: "string"; value: "Dialog" }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GDrawer"
+        ItemLibraryEntry {
+            name: "Drawer"
+            category: "QGravityUI - Overlays"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A panel sliding in from the side of the window.")
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GSheet"
+        ItemLibraryEntry {
+            name: "Sheet"
+            category: "QGravityUI - Overlays"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A panel sliding up from the bottom of the window.")
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GToast"
+        ItemLibraryEntry {
+            name: "Toast"
+            category: "QGravityUI - Overlays"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("One notification card.")
+            Property { name: "title"; type: "string"; value: "Toast" }
+            Property { name: "content"; type: "string"; value: "Something happened." }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GToaster"
+        ItemLibraryEntry {
+            name: "Toaster"
+            category: "QGravityUI - Overlays"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("The queue that stacks toasts in a corner of the window.")
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GAlert"
+        ItemLibraryEntry {
+            name: "Alert"
+            category: "QGravityUI - Overlays"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("An inline message in one of the semantic themes.")
+            Property { name: "title"; type: "string"; value: "Alert" }
+            Property { name: "message"; type: "string"; value: "Something happened." }
+        }
+    }
+
+    // --- Data --------------------------------------------------
+    Type {
+        name: "QGravityUI.Controls.GTable"
+        ItemLibraryEntry {
+            name: "Table"
+            category: "QGravityUI - Data"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A data table with sortable, resizable columns.")
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GTableColumnSetup"
+        ItemLibraryEntry {
+            name: "Table column setup"
+            category: "QGravityUI - Data"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("The menu that reorders and hides table columns.")
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GList"
+        ItemLibraryEntry {
+            name: "List"
+            category: "QGravityUI - Data"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A filterable, keyboard-navigable list.")
+            Property { name: "width"; type: "int"; value: 200 }
+            Property { name: "height"; type: "int"; value: 120 }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GTreeList"
+        ItemLibraryEntry {
+            name: "Tree list"
+            category: "QGravityUI - Data"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A list with expandable groups.")
+            Property { name: "width"; type: "int"; value: 200 }
+            Property { name: "height"; type: "int"; value: 160 }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GTreeSelect"
+        ItemLibraryEntry {
+            name: "Tree select"
+            category: "QGravityUI - Data"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A select whose options are a tree.")
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GProgress"
+        ItemLibraryEntry {
+            name: "Progress"
+            category: "QGravityUI - Data"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A determinate progress bar.")
+            Property { name: "value"; type: "real"; value: 40 }
+            Property { name: "width"; type: "int"; value: 200 }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GDefinitionList"
+        ItemLibraryEntry {
+            name: "Definition list"
+            category: "QGravityUI - Data"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("Term and value pairs in two columns.")
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GFilePreview"
+        ItemLibraryEntry {
+            name: "File preview"
+            category: "QGravityUI - Data"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A file card with a type icon and hover actions.")
+            Property { name: "fileName"; type: "string"; value: "file.ext" }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GPalette"
+        ItemLibraryEntry {
+            name: "Palette"
+            category: "QGravityUI - Data"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A keyboard-navigable grid of glyph toggles.")
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GPlaceholderContainer"
+        ItemLibraryEntry {
+            name: "Placeholder container"
+            category: "QGravityUI - Data"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("An empty state with an illustration and actions.")
+            Property { name: "title"; type: "string"; value: "Nothing here" }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GActionsPanel"
+        ItemLibraryEntry {
+            name: "Actions panel"
+            category: "QGravityUI - Data"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A bar of bulk actions over a selection.")
+            Property { name: "width"; type: "int"; value: 320 }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GAvatar"
+        ItemLibraryEntry {
+            name: "Avatar"
+            category: "QGravityUI - Data"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A round or square avatar from an image, initials or an icon.")
+            Property { name: "text"; type: "string"; value: "AB" }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GAvatarStack"
+        ItemLibraryEntry {
+            name: "Avatar stack"
+            category: "QGravityUI - Data"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("Overlapping avatars with a +N overflow.")
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GUser"
+        ItemLibraryEntry {
+            name: "User"
+            category: "QGravityUI - Data"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("An avatar with a name and a description.")
+            Property { name: "name"; type: "string"; value: "Ada Lovelace" }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GUserLabel"
+        ItemLibraryEntry {
+            name: "User label"
+            category: "QGravityUI - Data"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A user shown as a compact label.")
+            Property { name: "text"; type: "string"; value: "Ada Lovelace" }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GHotkey"
+        ItemLibraryEntry {
+            name: "Hotkey"
+            category: "QGravityUI - Data"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A key combination, rendered per platform.")
+            Property { name: "value"; type: "string"; value: "mod+s" }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GHelpMark"
+        ItemLibraryEntry {
+            name: "Help mark"
+            category: "QGravityUI - Data"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A question mark that opens an explanatory popover.")
+        }
+    }
+
+    // --- Navigation --------------------------------------------
+    Type {
+        name: "QGravityUI.Controls.GTabs"
+        ItemLibraryEntry {
+            name: "Tabs"
+            category: "QGravityUI - Navigation"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A row of tabs.")
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GBreadcrumbs"
+        ItemLibraryEntry {
+            name: "Breadcrumbs"
+            category: "QGravityUI - Navigation"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A path of links with separators and overflow.")
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GPagination"
+        ItemLibraryEntry {
+            name: "Pagination"
+            category: "QGravityUI - Navigation"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("Page numbers with previous and next.")
+            Property { name: "pageCount"; type: "int"; value: 12 }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GStepper"
+        ItemLibraryEntry {
+            name: "Stepper"
+            category: "QGravityUI - Navigation"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("Numbered steps with status icons.")
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GToc"
+        ItemLibraryEntry {
+            name: "Table of contents"
+            category: "QGravityUI - Navigation"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A table of contents for the current page.")
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GAccordion"
+        ItemLibraryEntry {
+            name: "Accordion"
+            category: "QGravityUI - Navigation"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A stack of expandable sections.")
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GAccordionItem"
+        ItemLibraryEntry {
+            name: "Accordion item"
+            category: "QGravityUI - Navigation"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("One expandable section of an accordion.")
+            Property { name: "summary"; type: "string"; value: "Section" }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GDisclosure"
+        ItemLibraryEntry {
+            name: "Disclosure"
+            category: "QGravityUI - Navigation"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A single expandable block of details.")
+            Property { name: "summary"; type: "string"; value: "Details" }
+        }
+    }
+
+    Type {
+        name: "QGravityUI.Controls.GArrowToggle"
+        ItemLibraryEntry {
+            name: "Arrow toggle"
+            category: "QGravityUI - Navigation"
+            version: "1.0"
+            requiredImport: "QGravityUI.Controls"
+            toolTip: qsTr("A chevron that rotates to show open state.")
+        }
+    }
+
+}

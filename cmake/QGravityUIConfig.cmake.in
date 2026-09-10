@@ -1,0 +1,21 @@
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+find_dependency(Qt6 6.11 COMPONENTS Core Gui Quick)
+
+include("${CMAKE_CURRENT_LIST_DIR}/QGravityUITargets.cmake")
+
+# Where the installed QML modules live. Add it to the consumer's import path:
+#
+#   find_package(QGravityUI REQUIRED)
+#   qt_add_executable(app main.cpp)
+#   target_link_libraries(app PRIVATE QGravityUI)
+#   set_property(TARGET app APPEND PROPERTY
+#       QT_QML_IMPORT_PATH "${QGravityUI_QML_DIR}")
+#
+# `QGravityUI` is an INTERFACE target over the four module libraries, which
+# are also exported under their own names if a consumer wants only some.
+#
+set_and_check(QGravityUI_QML_DIR "@PACKAGE_CMAKE_INSTALL_DATADIR@/qgravityui/qml")
+
+check_required_components(QGravityUI)
