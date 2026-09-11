@@ -1,9 +1,12 @@
-# The library itself: four QML modules, one C++ core.
+# The library itself: five QML modules, one C++ core.
 #
-#   QGravityUI.Core      enums, input-mode tracking, theme scope, clipboard
-#   QGravityUI.Tokens    generated colours, typography, component metrics
-#   QGravityUI.Icons     the icon subset, packed by tools/gen-icons
-#   QGravityUI.Controls   the 67 controls
+#   QGravityUI.Core        enums, input-mode tracking, theme scope, clipboard
+#   QGravityUI.Tokens      generated colours, typography, component metrics
+#   QGravityUI.Icons       the icon subset, packed by tools/gen-icons
+#   QGravityUI.Controls    the uikit-level controls
+#   QGravityUI.Navigation  the SPA app-shell (AsideHeader port), split out the
+#                          same way upstream ships @gravity-ui/navigation as
+#                          its own package on top of @gravity-ui/uikit
 #
 # The build order is the dependency order; each module declares the ones it
 # imports so qmlimportscanner can follow them.
@@ -11,6 +14,7 @@ add_subdirectory(Core)
 add_subdirectory(Tokens)
 add_subdirectory(Icons)
 add_subdirectory(Controls)
+add_subdirectory(Navigation)
 
 # One target to link instead of four. The names below are what the generated
 # qmldir files name in their `linkTarget` lines, so they stay as they are --
@@ -21,7 +25,7 @@ add_subdirectory(Controls)
 #   target_link_libraries(app PRIVATE QGravityUI)
 add_library(QGravityUI INTERFACE)
 
-set(QGRAVITYUI_MODULES core tokens icons controls)
+set(QGRAVITYUI_MODULES core tokens icons controls navigation)
 
 foreach(_gq_module IN LISTS QGRAVITYUI_MODULES)
     target_link_libraries(QGravityUI INTERFACE qgravityui_${_gq_module})

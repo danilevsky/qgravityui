@@ -16,6 +16,7 @@ set(QGRAVITYUI_TARGETS
     qgravityui_tokens qgravityui_tokensplugin
     qgravityui_icons qgravityui_iconsplugin
     qgravityui_controls qgravityui_controlsplugin
+    qgravityui_navigation qgravityui_navigationplugin
 )
 
 # In a static build qt_add_qml_module builds more than the library itself:

@@ -524,6 +524,18 @@ QtObject {
         }
     }
 
+    // AsideHeader (GNavigationAside): not a --_--* custom property upstream
+    // either -- gravity-ui/navigation ships these as plain constants in its
+    // own CSS, not part of the shared --g-spacing/--g-border-radius scales.
+    // Kept here rather than local to the component for the same reason
+    // sheetGrabberWidth/stepperIconSize are: one place to look up every
+    // sizing constant, component-specific or not.
+    function asideWidth(compact: bool): int {
+        return compact ? 56 : 240;
+    }
+
+    readonly property int asideItemHeight: 36
+
     function placeholderTitleVariant(size: int): int {
         switch (size) {
         case GPlaceholderSize.S: return GVariant.Subheader1;

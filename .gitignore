@@ -72,3 +72,4 @@ docs/internal
 
 /tests/visual/baseline/
 .qtcreator/CMakeLists.txt.user
+.claude
