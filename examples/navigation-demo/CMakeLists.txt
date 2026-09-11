@@ -13,11 +13,14 @@ qt_add_qml_module(qgravityui_navigation_demo
         pages/DashboardPage.qml
         pages/OrdersPage.qml
         pages/SettingsPage.qml
+        pages/IconsPage.qml
+        pages/dataloader.js
     IMPORTS
         TARGET qgravityui_core
         TARGET qgravityui_tokens
         TARGET qgravityui_controls
         TARGET qgravityui_navigation
+
 )
 
 target_link_libraries(qgravityui_navigation_demo PRIVATE Qt6::Quick QGravityUI)

@@ -12,7 +12,7 @@ import QGravityUI.Core
 QtObject {
     id: theme
 
-    property int mode: GThemeMode.Light
+    property int mode: GThemeMode.Dark
 
     readonly property bool dark: mode === GThemeMode.Dark || mode === GThemeMode.DarkHc
     readonly property bool highContrast: mode === GThemeMode.LightHc

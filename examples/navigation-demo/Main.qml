@@ -27,6 +27,7 @@ ApplicationWindow {
     readonly property var _pages: ({
         "home": "pages/HomePage.qml",
         "dashboard": "pages/DashboardPage.qml",
+        "icons":"pages/IconsPage.qml",
         "orders": "pages/OrdersPage.qml",
         "orders-all": "pages/OrdersPage.qml",
         "orders-pending": "pages/OrdersPage.qml",
@@ -65,6 +66,7 @@ ApplicationWindow {
             items: [
                 {id: "home", title: "Home", iconName: "house"},
                 {id: "dashboard", title: "Dashboard", iconName: "square-bars"},
+                {id: "icons", title: "Icons", iconName: "square-bars"},
                 {id: "orders", title: "Orders", iconName: "box", items: [
                     {id: "orders-all", title: "All"},
                     {id: "orders-pending", title: "Pending"},

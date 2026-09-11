@@ -945,8 +945,8 @@ ApplicationWindow {
                                     {name: "flat-action", view: GView.FlatAction}]
                             GButton {
                                 required property var modelData
-                                text: modelData.name
                                 view: modelData.view
+                                icon.name: modelData.name
                             }
                         }
                     }

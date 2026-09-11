@@ -39,6 +39,18 @@ if(NOT PROJECT_IS_TOP_LEVEL)
 endif()
 set(QGRAVITYUI_QML_IMPORT_PATH ${QT_QML_OUTPUT_DIRECTORY})
 
+# QML_IMPORT_PATH (not QGRAVITYUI_QML_IMPORT_PATH above) is the plain CMake
+# cache variable Qt Creator's QML code model and qmlls read to resolve
+# `import QGravityUI.*` for completion and "Follow Symbol" -- without it
+# Creator has no way to find our modules since they're static plugins with
+# no install-time qmldir next to a running binary. Only when this repo is
+# the top-level project: as a subdirectory, a consumer project's own
+# QML_IMPORT_PATH takes the value above via QGRAVITYUI_QML_IMPORT_PATH
+# instead of being clobbered here.
+if(PROJECT_IS_TOP_LEVEL)
+    set(QML_IMPORT_PATH ${QT_QML_OUTPUT_DIRECTORY} CACHE STRING "Qt Creator extra qml import paths" FORCE)
+endif()
+
 add_subdirectory(src)
 
 if(QGRAVITYUI_BUILD_EXAMPLES)
