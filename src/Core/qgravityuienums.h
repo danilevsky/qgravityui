@@ -175,6 +175,20 @@ public:
     Q_ENUM(Value)
 };
 
+// Slider's `tooltipDisplay`: whether the value bubble is shown only while the
+// handle is being interacted with, always, or never.
+class GTooltipDisplay : public QObject
+{
+    GRAVITY_ENUM_HOLDER(GTooltipDisplay)
+public:
+    enum Value {
+        Auto,
+        On,
+        Off,
+    };
+    Q_ENUM(Value)
+};
+
 // Which side of its anchor an overlay opens on.
 class GPlacement : public QObject
 {

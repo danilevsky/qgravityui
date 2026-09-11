@@ -28,6 +28,7 @@ qt_add_qml_module(qgravityui_controls
         GRadioGroup.qml
         GSegmentedRadioGroup.qml
         GSlider.qml
+        GRangeSlider.qml
         GSurface.qml
         GPopup.qml
         GTooltip.qml

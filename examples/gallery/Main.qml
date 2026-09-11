@@ -1096,6 +1096,75 @@ ApplicationWindow {
                         GSlider { width: 170; value: 0.4; inputState: GInputState.Error }
                         GSlider { width: 170; value: 0.4; enabled: false }
                     }
+
+                    GText { variant: GVariant.Subheader2; text: "Slider (tooltip / marks / error / orientation)" }
+                    Flow {
+                        Layout.fillWidth: true
+                        spacing: Metrics.spacing(6)
+                        // Always-on value bubble, ticked every 20 units.
+                        GSlider {
+                            width: 200
+                            from: 0; to: 100; value: 35
+                            marks: 6
+                            tooltipDisplay: GTooltipDisplay.On
+                        }
+                        // Ticks at specific values instead of an even split.
+                        GSlider {
+                            width: 200
+                            from: 0; to: 100; value: 60
+                            marks: [0, 25, 50, 75, 100]
+                            tooltipDisplay: GTooltipDisplay.Auto
+                        }
+                        // Tooltip below instead of above.
+                        GSlider {
+                            width: 200
+                            from: 0; to: 100; value: 20
+                            tooltipDisplay: GTooltipDisplay.On
+                            tooltipPlacement: GPlacement.Bottom
+                        }
+                        GSlider {
+                            width: 200
+                            from: 0; to: 100; value: 50
+                            errorMessage: "Value must stay under the quota"
+                        }
+                        RowLayout {
+                            spacing: Metrics.spacing(6)
+                            GSlider {
+                                Layout.preferredHeight: 160
+                                orientation: Qt.Vertical
+                                from: 0; to: 100; value: 40
+                                marks: 5
+                                tooltipDisplay: GTooltipDisplay.On
+                            }
+                            GSlider {
+                                Layout.preferredHeight: 160
+                                orientation: Qt.Vertical
+                                from: 0; to: 100; value: 65
+                                tooltipDisplay: GTooltipDisplay.On
+                                tooltipPlacement: GPlacement.Left
+                            }
+                        }
+                    }
+
+                    GText { variant: GVariant.Subheader2; text: "RangeSlider" }
+                    RowLayout {
+                        Layout.fillWidth: true
+                        spacing: Metrics.spacing(6)
+                        GRangeSlider {
+                            width: 200
+                            from: 0; to: 100
+                            first.value: 20; second.value: 70
+                            marks: 6
+                            tooltipDisplay: GTooltipDisplay.On
+                        }
+                        GRangeSlider {
+                            Layout.preferredHeight: 160
+                            orientation: Qt.Vertical
+                            from: 0; to: 100
+                            first.value: 25; second.value: 75
+                            marks: 5
+                        }
+                    }
                 }
             }
 
@@ -1314,6 +1383,20 @@ ApplicationWindow {
                             selectedIndexes: [1]
                             items: ["production", "staging", "review-1284", "review-1290",
                                     "sandbox", {text: "archived", disabled: true}]
+                            // Dragging already moves the row on its own; a
+                            // handler is what makes the new order outlive the
+                            // list, so the demo keeps it in `items`.
+                            onSortEnded: function (oldIndex, newIndex) {
+                                const next = items.slice();
+                                // Where the row lands is "next to the item it
+                                // was dropped on", not a fixed index: with a
+                                // filter on, the rows in between are hidden.
+                                const target = next[newIndex];
+                                const moved = next.splice(oldIndex, 1)[0];
+                                next.splice(next.indexOf(target)
+                                            + (newIndex > oldIndex ? 1 : 0), 0, moved);
+                                items = next;
+                            }
                         }
 
                         GTreeList {

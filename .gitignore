@@ -68,5 +68,7 @@ vcpkg_installed/
 Testing/
 .cache/
 
+docs/internal
+
 /tests/visual/baseline/
 .qtcreator/CMakeLists.txt.user

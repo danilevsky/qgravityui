@@ -120,6 +120,87 @@ QtObject {
             axes: {size: ["S", "M", "L", "Xl"]},
             body: 'GSlider { width: 160; size: GSize.%size%; value: 0.6 }'
         },
+        {
+            // The tooltip floats outside the control's own bounds (see
+            // GSlider.qml), so every case that shows one wraps it in a plain
+            // Item that leaves room for it to draw into -- the same margin a
+            // real caller would leave around a slider whose tooltip is not
+            // Off.
+            id: "slider-tooltip-on",
+            axes: {},
+            body: 'Item { width: 200; height: 80; GSlider { y: 40; width: 180; '
+                  + 'from: 0; to: 100; value: 35; tooltipDisplay: GTooltipDisplay.On } }'
+        },
+        {
+            id: "slider-tooltip-bottom",
+            axes: {},
+            body: 'Item { width: 200; height: 80; GSlider { width: 180; '
+                  + 'from: 0; to: 100; value: 35; tooltipDisplay: GTooltipDisplay.On; '
+                  + 'tooltipPlacement: GPlacement.Bottom } }'
+        },
+        {
+            id: "slider-marks",
+            axes: {},
+            body: 'GSlider { width: 180; from: 0; to: 100; value: 60; marks: 6 }'
+        },
+        {
+            id: "slider-error",
+            axes: {},
+            body: 'GSlider { width: 180; from: 0; to: 100; value: 50; '
+                  + 'errorMessage: "Value must stay under the quota" }'
+        },
+        {
+            id: "slider-vertical",
+            axes: {},
+            body: 'GSlider { height: 160; orientation: Qt.Vertical; from: 0; to: 100; '
+                  + 'value: 40; marks: 5; tooltipDisplay: GTooltipDisplay.On }'
+        },
+        {
+            id: "slider-vertical-tooltip-left",
+            axes: {},
+            body: 'Item { width: 200; height: 170; GSlider { x: 40; height: 160; '
+                  + 'orientation: Qt.Vertical; from: 0; to: 100; value: 65; '
+                  + 'tooltipDisplay: GTooltipDisplay.On; tooltipPlacement: GPlacement.Left } }'
+        },
+        {
+            // A low value should sit near the bottom of a vertical rail
+            // (max at top, same convention GSlider draws) -- this case is
+            // the visual half of the fix for the click/drag inversion,
+            // GListDrag-style coverage of the interaction itself lives in
+            // the QtQuickTest alongside GList's.
+            id: "slider-vertical-low-value",
+            axes: {},
+            body: 'GSlider { height: 160; orientation: Qt.Vertical; from: 0; to: 100; value: 15 }'
+        },
+        {
+            id: "range-slider",
+            axes: {},
+            body: 'GRangeSlider { width: 180; from: 0; to: 100; first.value: 20; second.value: 70 }'
+        },
+        {
+            id: "range-slider-marks",
+            axes: {},
+            body: 'GRangeSlider { width: 180; from: 0; to: 100; first.value: 25; second.value: 75; marks: 6 }'
+        },
+        {
+            id: "range-slider-tooltip-on",
+            axes: {},
+            body: 'Item { width: 200; height: 80; GRangeSlider { y: 40; width: 180; '
+                  + 'from: 0; to: 100; first.value: 20; second.value: 70; '
+                  + 'tooltipDisplay: GTooltipDisplay.On } }'
+        },
+        {
+            id: "range-slider-error",
+            axes: {},
+            body: 'GRangeSlider { width: 180; from: 0; to: 100; first.value: 20; second.value: 70; '
+                  + 'errorMessage: "Range must stay under the quota" }'
+        },
+        {
+            id: "range-slider-vertical",
+            axes: {},
+            body: 'GRangeSlider { height: 160; orientation: Qt.Vertical; from: 0; to: 100; '
+                  + 'first.value: 25; second.value: 75; marks: 5 }'
+        },
 
         {
             id: "label-theme",
@@ -270,6 +351,14 @@ QtObject {
             axes: {},
             body: 'GList { width: 200; height: 120; sortable: true; '
                   + 'items: ["one", "two", "three"] }'
+        },
+        {
+            // The grip lane and the filter field share the row's padding, so
+            // this is the case that shows a row lining up with the search box.
+            id: "list-filterable-sortable",
+            axes: {},
+            body: 'GList { width: 200; height: 140; filterable: true; sortable: true; '
+                  + 'selectedIndexes: [1]; items: ["one", "two", "three"] }'
         },
         {
             id: "treelist",
