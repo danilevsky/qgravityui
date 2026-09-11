@@ -155,7 +155,8 @@ Item {
 
         Column {
             id: itemsColumn
-            width: itemsFlick.width
+            x: aside._rowInline
+            width: itemsFlick.width - 2 * aside._rowInline
             spacing: Metrics.spacing(1)
 
             Repeater {

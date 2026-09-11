@@ -57,7 +57,7 @@ T.AbstractButton {
 
         GIcon {
             id: glyph
-            x: item._inline
+            x: item.compact ? (parent.width - width) / 2 : item._inline
             anchors.verticalCenter: parent.verticalCenter
             visible: item.iconName !== ""
             name: item.iconName
