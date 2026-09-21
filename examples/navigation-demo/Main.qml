@@ -66,7 +66,7 @@ ApplicationWindow {
             items: [
                 {id: "home", title: "Home", iconName: "house"},
                 {id: "dashboard", title: "Dashboard", iconName: "square-bars"},
-                {id: "icons", title: "Icons", iconName: "square-bars"},
+                {id: "icons", title: "Icons", iconName: "picture"},
                 {id: "orders", title: "Orders", iconName: "box", items: [
                     {id: "orders-all", title: "All"},
                     {id: "orders-pending", title: "Pending"},
