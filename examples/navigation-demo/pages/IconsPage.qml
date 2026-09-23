@@ -120,6 +120,8 @@ GCard {
                             dialogIcon.iconName = name;
                             dialogIcon.open();
                         }
+
+                        GTooltip { text: name }
                     }
                 }
 
