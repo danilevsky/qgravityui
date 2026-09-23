@@ -12,11 +12,11 @@ option(QGRAVITYUI_BUILD_EXAMPLES "Build the demo gallery" ${PROJECT_IS_TOP_LEVEL
 option(QGRAVITYUI_BUILD_TESTS "Build the visual regression runner" ${PROJECT_IS_TOP_LEVEL})
 option(QGRAVITYUI_INSTALL "Generate install rules for the library" ${PROJECT_IS_TOP_LEVEL})
 
-find_package(Qt6 6.11 REQUIRED COMPONENTS Core Gui Quick)
+find_package(Qt6 6.10 REQUIRED COMPONENTS Core Gui Quick)
 
 # Directory-scoped (AUTOMOC, the C++ standard, Qt's policy defaults), so a
 # parent project keeps its own settings.
-qt_standard_project_setup(REQUIRES 6.11)
+qt_standard_project_setup(REQUIRES 6.10)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
